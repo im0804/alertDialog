@@ -47,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
     public void firstBtn(View view) {
         adb.setTitle("first click");
         adb.setMessage("this is a simple alert");
+        adb.setIcon(0);
+        adb.setNegativeButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        adb.setPositiveButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
         AlertDialog ad = adb.create();
         ad.show();
     }
@@ -60,6 +71,16 @@ public class MainActivity extends AppCompatActivity {
     public void secondBtn(View view) {
         adb.setIcon(R.drawable.tenniscourt3);
         adb.setMessage("this is a simple alert");
+        adb.setNegativeButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        adb.setPositiveButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
         AlertDialog ad = adb.create();
         ad.show();
     }
@@ -73,9 +94,14 @@ public class MainActivity extends AppCompatActivity {
     public void thirdBtn(View view) {
         adb.setIcon(R.drawable.tenniscourt3);
         adb.setMessage("this is a simple alert");
-        adb.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
+        adb.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+            }
+        });
+        adb.setPositiveButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
             }
         });
         AlertDialog ad = adb.create();
@@ -89,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
      * @return shows the dialog alart on the screen
      */
     public void forthBtn(View view) {
+        adb.setIcon(0);
         adb.setMessage("change color alart");
         adb.setPositiveButton("change color", new DialogInterface.OnClickListener() {
             @Override
@@ -114,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
      * @return shows the dialog alart on the screen
      */
     public void fifthBtn(View view) {
+        adb.setIcon(0);
         adb.setMessage("change color alart");
         adb.setPositiveButton("change color", new DialogInterface.OnClickListener() {
             @Override
@@ -128,10 +156,15 @@ public class MainActivity extends AppCompatActivity {
                 dialogInterface.cancel();
             }
         });
-        adb.setNeutralButton("white", new DialogInterface.OnClickListener() {
+        adb.setPositiveButton("white", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 lyout.setBackgroundColor(Color.WHITE);
+            }
+        });
+        adb.setNegativeButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
             }
         });
         AlertDialog ad = adb.create();
