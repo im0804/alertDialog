@@ -156,15 +156,10 @@ public class MainActivity extends AppCompatActivity {
                 dialogInterface.cancel();
             }
         });
-        adb.setPositiveButton("white", new DialogInterface.OnClickListener() {
+        adb.setNeutralButton("white", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 lyout.setBackgroundColor(Color.WHITE);
-            }
-        });
-        adb.setNegativeButton("", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
             }
         });
         AlertDialog ad = adb.create();
